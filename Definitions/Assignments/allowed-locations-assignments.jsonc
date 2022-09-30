@@ -15,14 +15,11 @@
         ]
     },
     "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
         "epac-dev": [
             "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
-        ],
-        "epac-test": [
-            "/subscriptions/b9ca7ae0-9173-4fe8-91db-0a802664368f"
-        ],
-        "tenant": [
-            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
         ]
     }
 }

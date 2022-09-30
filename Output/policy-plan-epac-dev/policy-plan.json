@@ -1,0 +1,451 @@
+{
+  "replacedAssignments": {},
+  "updatedExemptions": {},
+  "newAssignments": {
+    "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/defender-enable": {
+      "Description": "Enabled defender for KeyVault, ARM, SQL, etc",
+      "identityRequired": true,
+      "Scope": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "initiativeId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policySetDefinitions/defender-dine-enable-for-subscription",
+      "PolicyParameterObject": {
+        "effect": "AuditIfNotExists"
+      },
+      "DisplayName": "Enable Defender On All Resource Types",
+      "EnforcementMode": "Default",
+      "Id": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/defender-enable",
+      "managedIdentityLocation": "eastus2",
+      "Metadata": {
+        "roles": [
+          {
+            "scope": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+            "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+            "roleDisplayName": "Owner"
+          }
+        ]
+      },
+      "Name": "defender-enable"
+    },
+    "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/dc595cb1-1cde-45f6-8faf-f88874e1c0e1": {
+      "Description": "Audits whether or not Logic Apps are deployed into Integration Service Environment",
+      "identityRequired": false,
+      "Scope": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "managedIdentityLocation": "eastus2",
+      "PolicyParameterObject": {},
+      "DisplayName": "Logic Apps Should be Deployed into Integration Service Environment",
+      "EnforcementMode": "Default",
+      "Id": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+      "policyId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+      "Metadata": {},
+      "Name": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1"
+    },
+    "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/allowed-locations": {
+      "Description": "Sets the allowed locations",
+      "identityRequired": false,
+      "Scope": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "initiativeId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policySetDefinitions/general-allowed-locations-policy-set",
+      "PolicyParameterObject": {
+        "AllowedLocations": [
+          "eastus2"
+        ]
+      },
+      "DisplayName": "Allowed Locations",
+      "EnforcementMode": "Default",
+      "Id": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/allowed-locations",
+      "managedIdentityLocation": "eastus2",
+      "Metadata": {},
+      "Name": "allowed-locations"
+    }
+  },
+  "newExemptions": {},
+  "replacedInitiativeDefinitions": {},
+  "tenantID": null,
+  "removedRoleAssignments": {},
+  "createdOn": "2022-09-30 23:09:27Z",
+  "noChanges": false,
+  "rootScopeId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+  "deletedPolicyDefinitions": {},
+  "replacedPolicyDefinitions": {},
+  "updatedInitiativeDefinitions": {},
+  "updatedAssignments": {},
+  "newInitiativeDefinitions": {
+    "general-allowed-locations-policy-set": {
+      "Description": "This initiative contains the policies necessary to limit Azure region deployments for all resources and resource groups.",
+      "Name": "general-allowed-locations-policy-set",
+      "Parameter": {
+        "AllowedLocations": {
+          "type": "Array",
+          "defaultValue": [
+            "centralus",
+            "eastus",
+            "eastus2",
+            "southcentralus"
+          ]
+        }
+      },
+      "SubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "DisplayName": "Allowed locations Initiative",
+      "PolicyDefinition": [
+        {
+          "policyDefinitionReferenceId": "allowed-locations-resources",
+          "parameters": {
+            "listOfAllowedLocations": {
+              "value": "[parameters('AllowedLocations')]"
+            }
+          },
+          "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c"
+        },
+        {
+          "policyDefinitionReferenceId": "allowed-locations-resource-groups",
+          "parameters": {
+            "listOfAllowedLocations": {
+              "value": "[parameters('AllowedLocations')]"
+            }
+          },
+          "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e765b5de-1225-4ba3-bd56-1ac6695af988"
+        }
+      ],
+      "Metadata": {
+        "version": "1.0.0",
+        "category": "Org Governance"
+      }
+    },
+    "defender-dine-enable-for-subscription": {
+      "Description": "This initiative enrolls subscriptions in all Azure Defender Types.",
+      "DisplayName": "Defender enroll Subscription",
+      "Parameter": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Enable Azure Defender",
+            "description": "Enable Azure Defender"
+          },
+          "allowedValues": [
+            "DeployIfNotExists",
+            "AuditIfNotExists",
+            "Disabled"
+          ],
+          "defaultValue": "DeployIfNotExists"
+        }
+      },
+      "SubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "Name": "defender-dine-enable-for-subscription",
+      "GroupDefinition": [
+        {
+          "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/Azure_Security_Benchmark_v3.0_LT-1",
+          "category": null,
+          "description": null,
+          "displayName": null,
+          "name": "Azure_Security_Benchmark_v3.0_LT-1"
+        }
+      ],
+      "PolicyDefinition": [
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type AppServices",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "AppServices"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type Arm",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "Arm"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type SqlServers",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "SqlServers"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type ContainerRegistry",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "ContainerRegistry"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type DNS",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "DNS"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type KeyVaults",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "KeyVaults"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type KubernetesService",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "KubernetesService"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type VirtualMachines",
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "VirtualMachines"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type SqlServerVirtualMachines",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "SqlServerVirtualMachines"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        },
+        {
+          "policyDefinitionReferenceId": "Enable Azure Defender for Resource Type StorageAccounts",
+          "groupNames": [
+            "Azure_Security_Benchmark_v3.0_LT-1"
+          ],
+          "parameters": {
+            "effect": {
+              "value": "[parameters('effect')]"
+            },
+            "resourceProvider": {
+              "value": "StorageAccounts"
+            }
+          },
+          "policyDefinitionId": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyDefinitions/Enable Azure Defender for Resource Type"
+        }
+      ],
+      "Metadata": {
+        "version": "1.0.0",
+        "category": "Security Center"
+      }
+    }
+  },
+  "rootScope": {
+    "SubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5"
+  },
+  "replacedExemptions": {},
+  "expiredExemptions": {},
+  "deletedInitiativeDefinitions": {},
+  "updatedPolicyDefinitions": {},
+  "newPolicyDefinitions": {
+    "dc595cb1-1cde-45f6-8faf-f88874e1c0e1": {
+      "Metadata": {
+        "version": "1.0.0",
+        "category": "Logic Apps"
+      },
+      "DisplayName": "Logic Apps should be deployed into Integration Service Environment",
+      "Parameter": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+          ],
+          "defaultValue": "Audit"
+        }
+      },
+      "Mode": "Indexed",
+      "SubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "Name": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+      "Description": "Deploying Logic Apps into Integration Service Environment in a virtual network unlocks advanced Logic Apps networking and security features and provides you with greater control over your network configuration. Learn more at: https://aka.ms/integration-service-environment. Deploying into Integration Service Environment also allows encryption with customer-managed keys which provides enhanced data protection by allowing you to manage your encryption keys. This is often to meet compliance requirements.",
+      "Policy": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Logic/workflows"
+            },
+            {
+              "field": "Microsoft.Logic/workflows/integrationServiceEnvironment",
+              "exists": "false"
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    },
+    "Enable Azure Defender for Resource Type": {
+      "Metadata": {
+        "version": "1.0.2",
+        "category": "Security Center"
+      },
+      "DisplayName": "Enable Azure Defender for Resource Type at Subscription",
+      "Parameter": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Deploy the execution of the policy"
+          },
+          "allowedValues": [
+            "DeployIfNotExists",
+            "AuditIfNotExists",
+            "Disabled"
+          ],
+          "defaultValue": "DeployIfNotExists"
+        },
+        "resourceProvider": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Defender name for resource provider",
+            "description": "Valid choices (om 6/2/2021) are: Arm, DNS, KeyVaults, ContainerRegistry, KubernetesService, StorageAccounts, SqlServerVirtualMachines, SqlServers, AppServices, VirtualMachines"
+          },
+          "defaultValue": "Arm"
+        }
+      },
+      "Mode": "All",
+      "SubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5",
+      "Name": "Enable Azure Defender for Resource Type",
+      "Description": "This policy enables Azure Defender in Azure Security Center. The resourceProvider parameter specifies the service. ",
+      "Policy": {
+        "if": {
+          "field": "type",
+          "equals": "Microsoft.Resources/subscriptions"
+        },
+        "then": {
+          "effect": "[parameters('effect')]",
+          "details": {
+            "type": "Microsoft.Security/pricings",
+            "deploymentScope": "Subscription",
+            "existenceScope": "Subscription",
+            "name": "[parameters('resourceProvider')]",
+            "roleDefinitionIds": [
+              "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+            ],
+            "existenceCondition": {
+              "field": "Microsoft.Security/pricings/pricingTier",
+              "equals": "Standard"
+            },
+            "deployment": {
+              "location": "eastus",
+              "properties": {
+                "mode": "incremental",
+                "parameters": {
+                  "resourceProvider": {
+                    "value": "[parameters('resourceProvider')]"
+                  }
+                },
+                "template": {
+                  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                  "contentVersion": "1.0.0.0",
+                  "parameters": {
+                    "resourceProvider": {
+                      "type": "String"
+                    }
+                  },
+                  "variables": {},
+                  "resources": [
+                    {
+                      "type": "Microsoft.Security/pricings",
+                      "apiVersion": "2018-06-01",
+                      "name": "[parameters('resourceProvider')]",
+                      "properties": {
+                        "pricingTier": "Standard"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "addedRoleAssignments": {
+    "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5/providers/Microsoft.Authorization/policyAssignments/defender-enable": {
+      "DisplayName": "Enable Defender On All Resource Types",
+      "identity": null,
+      "roles": [
+        {
+          "scope": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+          "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+          "roleDisplayName": "Owner"
+        }
+      ]
+    }
+  },
+  "deletedAssignments": {},
+  "deletedExemptions": {},
+  "orphanedExemptions": {}
+}

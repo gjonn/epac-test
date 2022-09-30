@@ -14,6 +14,7 @@ param(
 . "$PSScriptRoot/../Helpers/Get-GlobalSettings.ps1"
 . "$PSScriptRoot/../Helpers/Select-PacEnvironment.ps1"
 . "$PSScriptRoot/../Helpers/Set-AzCloudTenantSubscription.ps1"
+. "$PSScriptRoot/../Helpers/Invoke-AzCli.ps1"
 
 $InformationPreference = "Continue"
 Invoke-AzCli config set extension.use_dynamic_install=yes_without_prompt -SuppressOutput

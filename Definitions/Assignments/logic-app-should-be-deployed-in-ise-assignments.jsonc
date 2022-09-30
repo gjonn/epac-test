@@ -1,0 +1,25 @@
+{
+    "nodeName": "/LogicAppDeployISE/",
+    "assignment": {
+        "name": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+        "displayName": "Logic Apps Should be Deployed into Integration Service Environment",
+        "description": "Audits whether or not Logic Apps are deployed into Integration Service Environment"
+    },
+    "definitionEntry": {
+        "policyName": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+        "friendlyNameToDocumentIfGuid": "Deploy LogicApp in ISE"
+    },
+    "parameters": {
+        "effect": [
+            "Audit"
+        ]
+    },
+    "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "nodeName": "/DefenderEnableSub/",
+    "assignment": {
+        "name": "defender-enable",
+        "displayName": "Enable Defender On All Resource Types",
+        "description": "Enabled defender for KeyVault, ARM, SQL, etc"
+    },
+    "definitionEntry": {
+        "initiativeName": "defender-dine-enable-for-subscription",
+        "friendlyNameToDocumentIfGuid": ""
+    },
+    "parameters": {
+        "effect": "AuditIfNotExists"
+    },
+    "scope": {
+        "prod": [
+            "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}

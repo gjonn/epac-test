@@ -1,0 +1,104 @@
+{
+  "replacedAssignments": {},
+  "updatedExemptions": {},
+  "newAssignments": {
+    "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8/providers/Microsoft.Authorization/policyAssignments/dc595cb1-1cde-45f6-8faf-f88874e1c0e1": {
+      "Description": "Audits whether or not Logic Apps are deployed into Integration Service Environment",
+      "identityRequired": false,
+      "Scope": "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8",
+      "managedIdentityLocation": "eastus2",
+      "PolicyParameterObject": {},
+      "DisplayName": "Logic Apps Should be Deployed into Integration Service Environment",
+      "EnforcementMode": "Default",
+      "Id": "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8/providers/Microsoft.Authorization/policyAssignments/dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+      "policyId": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0/providers/Microsoft.Authorization/policyDefinitions/dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+      "Metadata": {},
+      "Name": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1"
+    }
+  },
+  "newExemptions": {},
+  "replacedInitiativeDefinitions": {},
+  "tenantID": null,
+  "removedRoleAssignments": {},
+  "createdOn": "2022-09-30 23:03:44Z",
+  "noChanges": false,
+  "rootScopeId": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+  "deletedPolicyDefinitions": {},
+  "replacedPolicyDefinitions": {},
+  "updatedInitiativeDefinitions": {},
+  "updatedAssignments": {},
+  "newInitiativeDefinitions": {},
+  "rootScope": {
+    "ManagementGroupName": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0"
+  },
+  "replacedExemptions": {},
+  "expiredExemptions": {},
+  "deletedInitiativeDefinitions": {},
+  "updatedPolicyDefinitions": {},
+  "newPolicyDefinitions": {
+    "dc595cb1-1cde-45f6-8faf-f88874e1c0e1": {
+      "Metadata": {
+        "version": "1.0.0",
+        "category": "Logic Apps"
+      },
+      "DisplayName": "Logic Apps should be deployed into Integration Service Environment",
+      "Parameter": {
+        "effect": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+          },
+          "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+          ],
+          "defaultValue": "Audit"
+        }
+      },
+      "Mode": "Indexed",
+      "Description": "Deploying Logic Apps into Integration Service Environment in a virtual network unlocks advanced Logic Apps networking and security features and provides you with greater control over your network configuration. Learn more at: https://aka.ms/integration-service-environment. Deploying into Integration Service Environment also allows encryption with customer-managed keys which provides enhanced data protection by allowing you to manage your encryption keys. This is often to meet compliance requirements.",
+      "Name": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+      "ManagementGroupName": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+      "Policy": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Logic/workflows"
+            },
+            {
+              "field": "Microsoft.Logic/workflows/integrationServiceEnvironment",
+              "exists": "false"
+            }
+          ]
+        },
+        "then": {
+          "effect": "[parameters('effect')]"
+        }
+      }
+    }
+  },
+  "addedRoleAssignments": {
+    "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0/providers/Microsoft.Authorization/policyAssignments/defender-enable": {
+      "DisplayName": "Enable Defender On All Resource Types",
+      "identity": {
+        "principalId": "539aa84f-779c-49b0-a4e4-01a942301fb9",
+        "tenantId": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "roles": [
+        {
+          "scope": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+          "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+          "roleDisplayName": "Owner"
+        }
+      ]
+    }
+  },
+  "deletedAssignments": {},
+  "deletedExemptions": {},
+  "orphanedExemptions": {}
+}
