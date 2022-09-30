@@ -1,0 +1,39 @@
+{
+    "managedIdentityLocations": {
+        "*": "eastus2"
+    },
+    "globalNotScopes": {
+        "*": [
+            "/resourceGroupPatterns/excluded-rg*"
+        ]
+    },
+    "pacEnvironments": [
+        {
+            "pacSelector": "epac-dev",
+            "cloud": "AzureCloud",
+            "tenantId": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+            "defaultSubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5",
+            "rootScope": {
+                "SubscriptionId": "52e45ef1-233c-42e6-b182-ad8b183529b5"
+            }
+        },
+        {
+            "pacSelector": "epac-test",
+            "cloud": "AzureCloud",
+            "tenantId": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+            "defaultSubscriptionId": "b9ca7ae0-9173-4fe8-91db-0a802664368f",
+            "rootScope": {
+                "SubscriptionId": "b9ca7ae0-9173-4fe8-91db-0a802664368f"
+            }
+        },
+        {
+            "pacSelector": "tenant",
+            "cloud": "AzureCloud",
+            "tenantId": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+            "defaultSubscriptionId": "5d5f325c-3b59-441b-aa08-ebaae9c801a8",
+            "rootScope": {
+                "ManagementGroupName": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0" // tenant root
+            }
+        }
+    ]
+}
