@@ -9,13 +9,7 @@ variables:
   tenantPlanServiceConnection: "sc-epac-plan-tenant"
   tenantDeployServiceConnection: "sc-epac-prod-tenant"
   tenantRolesServiceConnection: "sc-epac-roles-tenant"
-  tenant2PlanServiceConnection: "sc-epac-plan-tenant2"
-  tenant2DeployServiceConnection: "sc-epac-prod-tenant2"
-  tenant2RolesServiceConnection: "sc-epac-roles-tenant2"
-  tenant3PlanServiceConnection: "sc-epac-plan-tenant3"
-  tenant3DeployServiceConnection: "sc-epac-prod-tenant3"
-  tenant3RolesServiceConnection: "sc-epac-roles-tenant3"
-
+ 
   # Pipeline control
   isBrownfield: false # Suppresses deletes while moving from an existing Policy environment to Enterprise Policy as Code.
   # System.Debug: true
