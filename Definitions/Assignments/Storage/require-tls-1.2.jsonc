@@ -1,0 +1,20 @@
+{
+    "nodeName": "/RequireTLS12Storage/",
+    "assignment": {
+        "name": "storage-account-tls-setting-deny",
+        "displayName": "Enforce TLS 1.2 for Storage Accounts",
+        "description": "Denies the deployment of an Azure Storage Account when the 'Minimum TLS version' setting is not set to 'Version 1.2'."
+    },
+    "definitionEntry": {
+        "policyName": "storage-account-tls-setting-deny",
+        "friendlyNameToDocumentIfGuid": ""
+    },
+    "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}
