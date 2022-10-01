@@ -1,18 +1,16 @@
 {
-    "nodeName": "/Loc/",
+    "nodeName": "/DenyHTTPAppSvc/",
     "assignment": {
-        "name": "allowed-locations",
-        "displayName": "Allowed Locations",
-        "description": "Sets the allowed locations"
+        "name": "deny-http-force-https",
+        "displayName": "Force HTTPS for App Services",
+        "description": "Forces HTTPS on AppServices"
     },
     "definitionEntry": {
-        "initiativeName": "general-allowed-locations-policy-set",
+        "policyName": "deny-http-force-https",
         "friendlyNameToDocumentIfGuid": ""
     },
     "parameters": {
-        "AllowedLocations": [
-            "eastus2"
-        ]
+        "effect": "Deny"
     },
     "scope": {
         "prod": [

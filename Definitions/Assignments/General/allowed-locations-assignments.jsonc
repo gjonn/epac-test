@@ -1,0 +1,26 @@
+{
+    "nodeName": "/Loc/",
+    "assignment": {
+        "name": "allowed-locations",
+        "displayName": "Allowed Locations",
+        "description": "Sets the allowed locations"
+    },
+    "definitionEntry": {
+        "initiativeName": "general-allowed-locations-policy-set",
+        "friendlyNameToDocumentIfGuid": ""
+    },
+    "parameters": {
+        "AllowedLocations": [
+            "eastus2",
+            "eastus"
+        ]
+    },
+    "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}

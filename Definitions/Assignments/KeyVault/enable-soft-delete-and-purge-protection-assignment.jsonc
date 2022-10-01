@@ -1,0 +1,20 @@
+{
+    "nodeName": "/enableSoftDeletePurgeProtection/",
+    "assignment": {
+        "name": "enable-soft-delete-and-purge-protection",
+        "displayName": "Enable Soft Delete and Purge Protection",
+        "description": "Enables Soft Delete and Purge Protection on Key Vaults"
+    },
+    "definitionEntry": {
+        "policyName": "enable-soft-delete-and-purge-protection",
+        "friendlyNameToDocumentIfGuid": ""
+    },
+    "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}

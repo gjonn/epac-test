@@ -1,18 +1,16 @@
 {
     "nodeName": "/LogicAppDeployISE/",
     "assignment": {
-        "name": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+        "name": "LogicApp Should be deployed into ISE",
         "displayName": "Logic Apps Should be Deployed into Integration Service Environment",
         "description": "Audits whether or not Logic Apps are deployed into Integration Service Environment"
     },
     "definitionEntry": {
-        "policyName": "dc595cb1-1cde-45f6-8faf-f88874e1c0e1",
+        "policyName": "LogicApp Should be deployed into ISE",
         "friendlyNameToDocumentIfGuid": "Deploy LogicApp in ISE"
     },
     "parameters": {
-        "effect": [
-            "Audit"
-        ]
+        "effect": "Audit"
     },
     "scope": {
         "prod": [

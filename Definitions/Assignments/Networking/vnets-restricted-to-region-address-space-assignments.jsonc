@@ -1,0 +1,38 @@
+{
+    "nodeName": "/RestrictAddressSpaceToRegion/",
+    "assignment": {
+        "name": "Restrict VNET Address Space to predefined Region range",
+        "displayName": "Restrict VNET Address Space to predefined Region range",
+        "description": "Deny VNET Address space outside of predefined range"
+    },
+    "definitionEntry": {
+        "policyName": "Restrict VNET Address Space to predefined Region range",
+        "friendlyNameToDocumentIfGuid": ""
+    },
+    "parameters": {
+        "effect": "Audit",
+        "hubSubscriptions": [
+            "5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "spokeAllocations": [
+            {
+              "environment": "secondary",
+              "location": "eastus2",
+              "CIDR": "10.2.0.0/16"
+            },
+            {
+              "environment": "primary",
+              "location": "centralus",
+              "CIDR": "10.1.0.0/16"
+            }
+          ]
+    },
+    "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "nodeName": "/AppSvcPlanAllowedSKU/",
+    "assignment": {
+        "name": "appsvc_plan_allowed_sku",
+        "displayName": "Allowed App Service Plan SKUs",
+        "description": "An array of allowed SKUs for App Service Plans"
+    },
+    "definitionEntry": {
+        "policyName": "app-service-plan-allowed-sku",
+        "friendlyNameToDocumentIfGuid": ""
+    },
+    "parameters": {
+        "listOfAllowedSKUs": [
+            "S1",
+            "S2",
+            "S3"
+        ]
+    },
+    "scope": {
+        "prod": [
+            "/subscriptions/5d5f325c-3b59-441b-aa08-ebaae9c801a8"
+        ],
+        "epac-dev": [
+            "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5"
+        ]
+    }
+}
