@@ -1,0 +1,46 @@
+{
+  "replacedExemptions": {},
+  "deletedInitiativeDefinitions": {},
+  "rootScopeId": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+  "newInitiativeDefinitions": {},
+  "tenantID": null,
+  "orphanedExemptions": {},
+  "deletedAssignments": {},
+  "addedRoleAssignments": {
+    "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0/providers/Microsoft.Authorization/policyAssignments/defender-enable": {
+      "identity": {
+        "principalId": "539aa84f-779c-49b0-a4e4-01a942301fb9",
+        "tenantId": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+        "type": "SystemAssigned",
+        "userAssignedIdentities": null
+      },
+      "DisplayName": "Enable Defender On All Resource Types",
+      "roles": [
+        {
+          "scope": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0",
+          "roleDefinitionId": "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+          "roleDisplayName": "Owner"
+        }
+      ]
+    }
+  },
+  "replacedPolicyDefinitions": {},
+  "updatedExemptions": {},
+  "removedRoleAssignments": {},
+  "newAssignments": {},
+  "updatedPolicyDefinitions": {},
+  "newPolicyDefinitions": {},
+  "updatedInitiativeDefinitions": {},
+  "deletedExemptions": {},
+  "updatedAssignments": {},
+  "replacedAssignments": {},
+  "expiredExemptions": {},
+  "createdOn": "2022-09-30 23:53:28Z",
+  "deletedPolicyDefinitions": {},
+  "newExemptions": {},
+  "replacedInitiativeDefinitions": {},
+  "rootScope": {
+    "ManagementGroupName": "bdce4632-4e7f-492f-84b0-2f99e2a61cd0"
+  },
+  "noChanges": false
+}

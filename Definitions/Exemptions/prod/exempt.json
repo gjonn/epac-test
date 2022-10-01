@@ -1,0 +1,15 @@
+{
+    "exemptions": [
+        {
+            "name": "Exempt KubernetesService on Dev Subscription",
+            "displayName": "Exempt KubernetesService on Dev Subscription",
+            "description": "Don't enforce Defender for Kubernetes on Dev Subscription",
+            "exemptionCategory": "waiver",
+            "scope": "/subscriptions/52e45ef1-233c-42e6-b182-ad8b183529b5",
+            "policyAssignmentId": "/providers/microsoft.management/managementgroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0/providers/microsoft.authorization/policyassignments/defender-enable",
+            "policyDefinitionReferenceIds": [
+                "Enable Azure Defender for Resource Type KubernetesService"
+            ]
+        }
+    ]
+}
