@@ -17,23 +17,23 @@
         ],
         "documentationSpecifications": [
             {
-                "fileNameStem": "jll-policy-effects-across-environments",
+                "fileNameStem": "corp-policy-effects-across-environments",
                 "environmentCategories": [
                     "production"
                 ],
-                "title": "JLL Policy effects"
+                "title": "CORP Policy effects"
             }
         ]
     },
     "documentInitiatives": [
         {
             "pacEnvironment": "prod",
-            "fileNameStem": "jll-compliance-initiatives",
+            "fileNameStem": "corp-compliance-initiatives",
             "title": "Document interesting Initiatives",
             "initiatives": [
                 {
                     "shortName": "EnableDefender",
-                    "id": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0/providers/Microsoft.Authorization/policySetDefinitions/defender-dine-enable-for-subscription" // Azure Security Benchmark v3
+                    "id": "/providers/Microsoft.Management/managementGroups/bdce4632-4e7f-492f-84b0-2f99e2a61cd0/providers/Microsoft.Authorization/policySetDefinitions/defender-dine-enable-for-subscription" // Azure Defender
                 }
             ],
             "environmentColumnsInCsv": [
